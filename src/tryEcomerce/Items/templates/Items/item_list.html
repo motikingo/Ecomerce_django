@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for item in objects_list %}
+
+        <p> {{item.id}} - <a href = '{{item.Item_validation_detail}}'> {{item.name}}</a>  </p>
+
+        <ul>
+            <li><button><a href = "{{item.Item_validation_update}}">edit</a></button></li>
+            <li><button><a href = "{{item.Item_validation_delete}}">delete</a></button></li>
+            <li><button><a href = "add_to_cart/{{item.id}}">Add</a></button></li>
+        </ul>
+
+    {% endfor %}
+
+{% endblock %}
